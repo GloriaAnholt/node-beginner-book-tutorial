@@ -6,8 +6,8 @@
 // DONE: HTTP server to serve web pages
 // DONE: router to handle urls
 // DONE: request handlers
-// TODO: manage POST data with request data handlers
-// TODO: view logic for handlers to send things to broswer
+// DONE: manage POST data with request data handlers
+// DONE: view logic for handlers to send things to browser
 // TODO: upload handler to deal with images
 
 
