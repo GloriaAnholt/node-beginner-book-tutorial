@@ -12,7 +12,7 @@ function start(route, handle) {
     route(handle, pathname);
 
     response.writeHead(200, {'Content-type': 'text/plain'});  // creates the header
-    response.write('Hello world');    // creates the response body
+    response.write(content);    // creates the response body
     response.end();   // finishes the response
   }
 
