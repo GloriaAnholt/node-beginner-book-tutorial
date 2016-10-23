@@ -9,7 +9,7 @@ function start(route, handle) {
     var pathname = url.parse(request.url).pathname;
     console.log('Request for ' + pathname + ' received.');
 
-    route(handle, pathname);
+    var content = route(handle, pathname);
 
     response.writeHead(200, {'Content-type': 'text/plain'});  // creates the header
     response.write(content);    // creates the response body
