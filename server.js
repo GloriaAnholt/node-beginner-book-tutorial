@@ -9,15 +9,10 @@ function start(route, handle) {
     var pathname = url.parse(request.url).pathname;
     console.log('Request for ' + pathname + ' received.');
 
-    var content = route(handle, pathname);
-
-    response.writeHead(200, {'Content-type': 'text/plain'});  // creates the header
-    response.write(content);    // creates the response body
-    response.end();   // finishes the response
+    route(handle, pathname, response);
   }
 
   http.createServer(onRequest).listen(8888);  // indicates which port to listen on
-
   console.log('Server has started');
 }
 
