@@ -4,10 +4,13 @@ const http = require('http');
 const url = require('url');     // help extract the url from the request
                                 // check the GET/POST parameters
 
-function start() {
+function start(route) {
   function onRequest(request, response) { // request details not important atm
     var pathname = url.parse(request.url).pathname;
     console.log('Request for ' + pathname + ' received.');
+
+    route(pathname);
+
     response.writeHead(200, {'Content-type': 'text/plain'});  // creates the header
     response.write('Hello world');    // creates the response body
     response.end();   // finishes the response
