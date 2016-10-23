@@ -1,14 +1,12 @@
 
 function start() {
   console.log('Request handler \'start\' was called.');
+  var content = 'empty';
 
-  function sleep(milliSeconds) {
-    var startTime = new Date().getTime();
-    while (new Date().getTime() < startTime + milliSeconds);
-  }
-
-  sleep(1000);
-  return 'Hello start';
+  exec('ls -lah', function(err, stdout, stderr) {
+    content = stdout;
+  });
+  return content;
 }
 
 function upload() {
